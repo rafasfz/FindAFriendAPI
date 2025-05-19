@@ -17,7 +17,7 @@ datasource db {
 model Organization {
   id               String @id @default(nanoid())
   responsible_name String
-  email            String
+  email            String @unique
   zip_code         String
   address          String
   phone            String

@@ -5,16 +5,25 @@ export const organizationDataSchema = z.object({
   zip_code: z.string(),
   address: z.string(),
   phone: z.string(),
-  password: z.string(),
+  password: z.string().min(6),
+  email: z.string().email(),
 })
 export type OrganizationData = z.infer<typeof organizationDataSchema>
 
-export const organizationEntitySchema = organizationDataSchema.omit({
-  password: true,
-})
+export const organizationEntitySchema = organizationDataSchema
+  .omit({
+    password: true,
+  })
+  .extend({
+    id: z.string(),
+  })
 export type OrganizationEntity = z.infer<typeof organizationEntitySchema>
 
-export const organizationToSaveSchema = organizationEntitySchema.extend({
-  password_hash: z.string(),
-})
+export const organizationToSaveSchema = organizationDataSchema
+  .extend({
+    password_hash: z.string(),
+  })
+  .omit({
+    password: true,
+  })
 export type OrganizationToSave = z.infer<typeof organizationToSaveSchema>
