@@ -43,4 +43,14 @@ export class InMemoryOrganizationsRepository
 
     return organization
   }
+
+  async getPasswordHashByEmail(email: string) {
+    const organizationSaved = this.items.find((item) => item.email === email)
+
+    if (!organizationSaved) {
+      return null
+    }
+
+    return organizationSaved.password_hash
+  }
 }
