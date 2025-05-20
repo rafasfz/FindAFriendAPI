@@ -126,7 +126,7 @@ describe('Fetch Pets Use Case', () => {
   })
 
   it('should return empty array when no pets match filters', async () => {
-    petsRepository.items.push(makePet('org-1', city, { size: 'large' }))
+    petsRepository.items.push(makePet('org-1', city, { size: 'LARGE' }))
 
     const { pets } = await sut.execute({ city, petSize: 'SMALL' })
 
