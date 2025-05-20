@@ -29,7 +29,7 @@ export type PetToSave = z.infer<typeof petToSaveSchema>
 
 export const petEntitySchema = petDataSchema.extend({
   id: z.string(),
-  adopted_at: z.string().datetime().nullable(),
+  adopted_at: z.coerce.date().nullable(),
   organization: organizationEntitySchema,
 })
 export type PetEntity = z.infer<typeof petEntitySchema>
