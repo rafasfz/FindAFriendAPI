@@ -21,6 +21,7 @@ describe('Authenticate Use Case', async () => {
     phone: '(99) 99999-9999',
     responsible_name: 'John Lennon',
     zip_code: '99999-99',
+    city: 'Natal',
   }
 
   beforeEach(async () => {

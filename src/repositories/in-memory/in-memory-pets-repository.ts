@@ -17,7 +17,9 @@ export class InMemoryPetsRepository implements PetsRepository {
         phone: '(99) 99999-9999',
         address: 'Address',
         email: 'johnlennon@email.com',
+        city: 'Natal',
       },
+      adopted_at: null,
     }
 
     this.items.push(pet)

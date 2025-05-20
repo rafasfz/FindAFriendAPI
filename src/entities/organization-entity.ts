@@ -3,6 +3,7 @@ import { z } from 'zod'
 export const organizationDataSchema = z.object({
   responsible_name: z.string().min(3),
   zip_code: z.string(),
+  city: z.string(),
   address: z.string(),
   phone: z.string(),
   password: z.string().min(6),

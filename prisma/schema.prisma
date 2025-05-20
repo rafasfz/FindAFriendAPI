@@ -19,6 +19,7 @@ model Organization {
   responsible_name String
   email            String @unique
   zip_code         String
+  city             String
   address          String
   phone            String
   password_hash    String
@@ -60,6 +61,7 @@ model Pet {
   suitable_environment PetSuitableEnviroment
   requirements         String[]
   photos_url           String[]
+  adopted_at           DateTime?
 
   organization    Organization @relation(fields: [organization_id], references: [id])
   organization_id String
