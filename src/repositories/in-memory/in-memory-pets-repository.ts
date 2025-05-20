@@ -1,5 +1,5 @@
 import { PetToSave, PetEntity } from '@/src/entities/pet-entity'
-import { PetsRepository } from '../pets-repository'
+import { FecthPetsParams, PetsRepository } from '../pets-repository'
 import { nanoid } from 'nanoid'
 
 export class InMemoryPetsRepository implements PetsRepository {
@@ -35,5 +35,37 @@ export class InMemoryPetsRepository implements PetsRepository {
     }
 
     return pet
+  }
+
+  async fetchPets(filters: FecthPetsParams) {
+    let filteredPets = this.items.filter(
+      (pet) =>
+        pet.organization.city.toLowerCase() === filters.city.toLowerCase() &&
+        !pet.adopted_at,
+    )
+
+    if (filters.petSize) {
+      filteredPets = filteredPets.filter((pet) => pet.size === filters.petSize)
+    }
+
+    if (filters.petLifeStage) {
+      filteredPets = filteredPets.filter(
+        (pet) => pet.life_stage === filters.petLifeStage,
+      )
+    }
+
+    if (filters.petEnergyLevel) {
+      filteredPets = filteredPets.filter(
+        (pet) => pet.energy_level === filters.petEnergyLevel,
+      )
+    }
+
+    if (filters.petSuitableEnvironment) {
+      filteredPets = filteredPets.filter(
+        (pet) => pet.suitable_environment === filters.petSuitableEnvironment,
+      )
+    }
+
+    return filteredPets
   }
 }
