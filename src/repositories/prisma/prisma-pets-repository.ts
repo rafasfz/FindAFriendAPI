@@ -30,7 +30,15 @@ export class PrismaPetsRepository implements PetsRepository {
       },
     })
 
-    return pet
+    const petEntity = {
+      ...pet,
+      organization: {
+        ...pet.organization,
+        password_hash: undefined,
+      },
+    }
+
+    return petEntity
   }
 
   async fetchPets(filters: FecthPetsParams): Promise<PetEntity[]> {
@@ -57,6 +65,16 @@ export class PrismaPetsRepository implements PetsRepository {
       },
     })
 
-    return pets
+    const petsEntity = pets.map((pet) => {
+      return {
+        ...pet,
+        organization: {
+          ...pet.organization,
+          password_hash: undefined,
+        },
+      }
+    })
+
+    return petsEntity
   }
 }

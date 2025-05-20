@@ -1,10 +1,10 @@
 import z from 'zod'
 import { organizationEntitySchema } from './organization-entity'
 
-const petSizeSchema = z.enum(['SMALL', 'MEDIUM', 'LARGE'])
-const petLifeStageSchema = z.enum(['YOUNG', 'ADULT', 'SENIOR'])
-const petEnergyLevel = z.enum(['HIGH', 'MEDIUM', 'LOW'])
-const petSuitableEnvironment = z.enum(['LARGE', 'SMALL'])
+export const petSizeSchema = z.enum(['SMALL', 'MEDIUM', 'LARGE'])
+export const petLifeStageSchema = z.enum(['YOUNG', 'ADULT', 'SENIOR'])
+export const petEnergyLevel = z.enum(['HIGH', 'MEDIUM', 'LOW'])
+export const petSuitableEnvironment = z.enum(['LARGE', 'SMALL'])
 export type PetSize = z.infer<typeof petSizeSchema>
 export type PetLifeStage = z.infer<typeof petLifeStageSchema>
 export type PetEnergyLevel = z.infer<typeof petEnergyLevel>
