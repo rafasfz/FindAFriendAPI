@@ -23,7 +23,7 @@ describe('Register Pet Use Case', () => {
     sut = new RegisterPetUseCase(petsRepository)
   })
 
-  it('should be able to register an pet', async () => {
+  it('should be able to register a pet', async () => {
     const { pet } = await sut.execute({
       pet: petData,
       organizationId: 'org-id',
