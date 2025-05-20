@@ -1,7 +1,7 @@
 import { EncryptionAdapter } from '@/src/adapters/encryption/encryption-adapter'
 import { OrganizationEntity } from '@/src/entities/organization-entity'
 import { OrganizationsRepository } from '@/src/repositories/organizations-repository'
-import { InvalidCredentialsError } from './errors/invalid-credentials-error'
+import { InvalidCredentialsError } from '../errors/invalid-credentials-error'
 
 interface AuthenticateUseCaseRequest {
   email: string

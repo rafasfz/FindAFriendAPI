@@ -4,7 +4,7 @@ import {
   OrganizationEntity,
 } from '@/src/entities/organization-entity'
 import { OrganizationsRepository } from '@/src/repositories/organizations-repository'
-import { InvalidCredentialsError } from './errors/invalid-credentials-error'
+import { InvalidCredentialsError } from '../errors/invalid-credentials-error'
 
 interface RegisterOrganizationUseCaseRequest {
   organization: OrganizationData

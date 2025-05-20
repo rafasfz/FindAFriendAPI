@@ -1,9 +1,9 @@
 import { expect, describe, it, beforeEach } from 'vitest'
-import { InMemoryOrganizationsRepository } from '../repositories/in-memory/in-memory-organizations-repository'
-import { BcryptEncryptionAdapter } from '../adapters/encryption/bcrypt-encryption-adapter'
-import { OrganizationToSave } from '../entities/organization-entity'
-import { InvalidCredentialsError } from './errors/invalid-credentials-error'
-import { AuthenticateUseCase } from './authenticate'
+import { InMemoryOrganizationsRepository } from '../../../repositories/in-memory/in-memory-organizations-repository'
+import { BcryptEncryptionAdapter } from '../../../adapters/encryption/bcrypt-encryption-adapter'
+import { OrganizationToSave } from '../../../entities/organization-entity'
+import { InvalidCredentialsError } from '../../errors/invalid-credentials-error'
+import { AuthenticateUseCase } from '../authenticate'
 
 let sut: AuthenticateUseCase
 let organizationsRepository: InMemoryOrganizationsRepository
